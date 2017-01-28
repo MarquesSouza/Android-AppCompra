@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
 
 import com.example.marquesdesouza.appcomprafacil.model.Produto;
-import com.example.marquesdesouza.appcomprafacil.model.Usuario;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class ProdutoDAO extends SQLiteOpenHelper{
     private static final String TABELA="PRODUDOS";
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE PRODUTOS (nome TEXT NOT NULL,codigo TEXT NOT NULL,NUMERO TEXT NOT NULL);";
+        String sql = "CREATE TABLE PRODUTOS (nome TEXT NOT NULL,codigo TEXT NOT NULL,numero TEXT NOT NULL);";
         db.execSQL(sql);
     }
     @Override

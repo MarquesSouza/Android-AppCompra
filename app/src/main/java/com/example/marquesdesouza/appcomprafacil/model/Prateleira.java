@@ -5,8 +5,17 @@ package com.example.marquesdesouza.appcomprafacil.model;
  */
 
 public class Prateleira {
+    private String numero;
     private String nome;
-    private String endereco;
+    private String local;
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 
     public String getNome() {
         return nome;
@@ -16,11 +25,11 @@ public class Prateleira {
         this.nome = nome;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getLocal() {
+        return local;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setLocal(String local) {
+        this.local = local;
     }
 }
