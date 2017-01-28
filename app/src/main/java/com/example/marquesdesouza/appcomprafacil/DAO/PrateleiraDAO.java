@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 public class PrateleiraDAO extends SQLiteOpenHelper {
-        public PrateleiraDO (Context context){ super(context,"Prateleira",null,1);}
+        public PrateleiraDAO (Context context){ super(context,"Prateleira",null,1);}
         private static final String TABELA="Prateleira";
         private static final String NUMERO="numero";
         private static final String NOME="nome";
