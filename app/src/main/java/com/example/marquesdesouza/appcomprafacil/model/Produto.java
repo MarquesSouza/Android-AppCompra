@@ -7,7 +7,7 @@ package com.example.marquesdesouza.appcomprafacil.model;
 public class Produto {
     private String nome;
     private String codigo;
-    private String descricao;
+    private String numero;
 
     public String getNome() {
         return nome;
@@ -25,11 +25,11 @@ public class Produto {
         this.codigo = codigo;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 }
