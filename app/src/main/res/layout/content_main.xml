@@ -9,20 +9,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.marquesdesouza.appcomprafacil.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/user"
-        android:id="@+id/imageView3"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:queryHint="Procure Por Produtos,Marcas..."
+        android:layout_marginBottom="428dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorMenu" />
 </RelativeLayout>
