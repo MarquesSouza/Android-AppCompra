@@ -1,5 +1,6 @@
 package com.example.marquesdesouza.appcomprafacil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +13,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.example.marquesdesouza.appcomprafacil.DAO.ProdutoDAO;
+import com.example.marquesdesouza.appcomprafacil.model.Produto;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ListView lista_pesquisa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +32,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +41,22 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        lista_pesquisa=(ListView) findViewById(R.id.lista_pesquisa);
+        lista_pesquisa.setOnClickListener(new AdapterView.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // essa parte e quando clicar no produto execultar algo adapitar essa parte
+                // public void onItemClick(AdapterView<?> lista, View turma_s, int i, long l) {
+                //  Produto produto = (Produto) lista_pesquisa.getItemAtPosition(i);
+                //  Intent intetGoListaAluno= new Intent(MainActivity.this,ListaAlunosActivity.class);
+                //  intetGoListaAluno.putExtra("",produto);
+                //  startActivity(intetGoListaAluno);
+
+            }
+        });
+        carregalista();
+
     }
 
     @Override
@@ -98,4 +115,12 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    private void carregalista(){
+        ProdutoDAO dao = new ProdutoDAO(this);
+        List<Produto> produtos = dao.busca(); dao.close();
+
+        ArrayAdapter<Produto> adpter =  new ArrayAdapter<Produto>(this,android.R.layout.simple_list_item_1 ,produtos);
+        lista_pesquisa.setAdapter(adpter);
+    }
+
 }

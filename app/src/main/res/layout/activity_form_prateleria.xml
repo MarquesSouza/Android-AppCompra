@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:text="Numero da Prateleria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_prateleira"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="sans-serif-condensed"
+        android:typeface="normal"
+        android:textSize="30sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/Edt_NumeroPrateleria" />
+
+    <TextView
+        android:text="Nome da Prateleira"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_nome"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="sans-serif-condensed"
+        android:typeface="normal"
+        android:textSize="30sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/Edt_NomePrateleira" />
+
+    <TextView
+        android:text="Localização da Prateleira"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_local"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="sans-serif-condensed"
+        android:typeface="normal"
+        android:textSize="30sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/Edt_LocalizacaoPrateleira" />
+</LinearLayout>

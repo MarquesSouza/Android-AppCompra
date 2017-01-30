@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:text="Nome do Produto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Nome"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="sans-serif-condensed"
+        android:typeface="normal"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/Edt_nome" />
+
+    <TextView
+        android:text="Codigo do Produto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_codigo"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="sans-serif-condensed"
+        android:typeface="normal"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/Edt_codigo" />
+
+    <TextView
+        android:text="Numero da Prateleira"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Numero"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="sans-serif-condensed"
+        android:typeface="normal"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textStyle="normal|bold" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spn_produto" />
+
+</LinearLayout>

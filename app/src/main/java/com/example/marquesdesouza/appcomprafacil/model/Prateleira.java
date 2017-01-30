@@ -1,10 +1,12 @@
 package com.example.marquesdesouza.appcomprafacil.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Marques de Souza on 27/01/2017.
  */
 
-public class Prateleira {
+public class Prateleira implements Serializable{
     private String numero;
     private String nome;
     private String local;
@@ -32,4 +34,6 @@ public class Prateleira {
     public void setLocal(String local) {
         this.local = local;
     }
+    // codigo de serieble do frequencia rever se vai ser ultio @Override
+    // public String toString(){return getMatricula()+"-"+getNome();}
 }

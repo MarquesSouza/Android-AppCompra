@@ -1,10 +1,12 @@
 package com.example.marquesdesouza.appcomprafacil.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Marques de Souza on 27/01/2017.
  */
 
-public class Produto {
+public class Produto implements Serializable {
     private String nome;
     private String codigo;
     private String numero;
@@ -32,4 +34,6 @@ public class Produto {
     public void setNumero(String numero) {
         this.numero = numero;
     }
+    // codigo de serieble do frequencia rever se vai ser ultio @Override
+   // public String toString(){return getMatricula()+"-"+getNome();}
 }
