@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.marquesdesouza.appcomprafacil.FormProdutoActivity">
+
+
+    <item android:id="@+id/menu_formulario_ok_produto"
+        android:title="Ok"
+        android:icon="@drawable/checkmark"
+        app:showAsAction="always"
+        />
+
+</menu>

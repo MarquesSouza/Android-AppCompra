@@ -14,6 +14,7 @@ import com.example.marquesdesouza.appcomprafacil.model.Produto;
 
 public class FormPrateleriaActivity extends AppCompatActivity {
     private FormHelpPrateleira helper;
+    private Prateleira prateleira;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,7 @@ public class FormPrateleriaActivity extends AppCompatActivity {
 
         helper=new FormHelpPrateleira(this);
         Intent pegaIntent= getIntent();
-        Prateleira prateleira=(Prateleira) pegaIntent.getSerializableExtra("prateleria");
+         prateleira=(Prateleira) pegaIntent.getSerializableExtra("prateleria");
         if(prateleira!=null){
             helper.preencherFormulario(prateleira);
         }
@@ -58,4 +59,4 @@ public class FormPrateleriaActivity extends AppCompatActivity {
     }
 }
 
-}
+
