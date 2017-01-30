@@ -42,24 +42,21 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        lista_pesquisa=(ListView) findViewById(R.id.lista_pesquisa);
-        lista_pesquisa.setOnClickListener(new AdapterView.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                // essa parte e quando clicar no produto execultar algo adapitar essa parte
-                // public void onItemClick(AdapterView<?> lista, View turma_s, int i, long l) {
-                //  Produto produto = (Produto) lista_pesquisa.getItemAtPosition(i);
-                //  Intent intetGoListaAluno= new Intent(MainActivity.this,ListaAlunosActivity.class);
-                //  intetGoListaAluno.putExtra("",produto);
-                //  startActivity(intetGoListaAluno);
+        lista_pesquisa = (ListView) findViewById(R.id.lista_pesquisa);
+        // lista_pesquisa.setOnClickListener(new AdapterView.OnClickListener(){
+        //    @Override
+        //    public void onClick(View v) {
+        // essa parte e quando clicar no produto execultar algo adapitar essa parte
+        // public void onItemClick(AdapterView<?> lista, View turma_s, int i, long l) {
+        //  Produto produto = (Produto) lista_pesquisa.getItemAtPosition(i);
+        //  Intent intetGoListaAluno= new Intent(MainActivity.this,ListaAlunosActivity.class);
+        //  intetGoListaAluno.putExtra("",produto);
+        //  startActivity(intetGoListaAluno);
+    // });
+   // carregalista();
+}
 
-            }
-        });
-        carregalista();
-
-    }
-
-    @Override
+     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -108,7 +105,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-
+            Intent intet= new Intent(MainActivity.this,ListaPrateleiraActivity.class);
+            startActivity(intet);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

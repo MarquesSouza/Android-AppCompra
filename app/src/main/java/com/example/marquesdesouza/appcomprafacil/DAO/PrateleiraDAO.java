@@ -3,6 +3,8 @@ package com.example.marquesdesouza.appcomprafacil.DAO;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteAbortException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
@@ -17,7 +19,7 @@ import java.util.List;
  */
 
 public class PrateleiraDAO extends SQLiteOpenHelper {
-        public PrateleiraDAO (Context context){ super(context,"Prateleira",null,1);}
+        public PrateleiraDAO (Context context){ super(context,"prateleiras",null,1);}
         private static final String TABELA="Prateleira";
         private static final String NUMERO="numero";
         private static final String NOME="nome";
@@ -29,21 +31,22 @@ public class PrateleiraDAO extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE IF EXISTS "+TABELA;
+        String sql = "DROP TABLE IF EXISTS "+TABELA+";";
         db.execSQL(sql);
         onCreate(db);
     }
     public void insere(Prateleira prateleira){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues dados = getContentValuesPrateleira(prateleira);
-        db.insert(TABELA,null,dados);
-    }
+       db.insert(TABELA,null,dados);
+   }
+
     @NonNull
     private ContentValues getContentValuesPrateleira(Prateleira prateleira) {
         ContentValues dados = new ContentValues();
         dados.put(NOME, prateleira.getNome());
         dados.put(LOCAL, prateleira.getLocal());
-        dados.put(NUMERO,prateleira.getNumero());
+        dados.put(NUMERO, prateleira.getNumero());
         return dados;
     }
     public List<Prateleira> busca(){
@@ -62,11 +65,22 @@ public class PrateleiraDAO extends SQLiteOpenHelper {
         c.close();
         return prateleiras;
     }
+    public Integer  buscateste(){
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "SELECT * FROM Prateleira;";
+        Cursor c = db.rawQuery(sql, null);
+        Integer cont=0;
+        while (c.moveToNext()) {
+           cont++;
+        }
+        c.close();
+        return cont;
+    }
     public void deleta(Prateleira prateleira) {
         SQLiteDatabase db = getWritableDatabase();
 
         String [] params = {prateleira.getNumero()};
-        db.delete(TABELA, NUMERO+" = ?", params);
+        db.delete(TABELA, NUMERO+"= ?", params);
     }
     public void limpar() {
         SQLiteDatabase db = getWritableDatabase();

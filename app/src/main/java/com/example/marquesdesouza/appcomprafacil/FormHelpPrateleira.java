@@ -17,7 +17,7 @@ public class FormHelpPrateleira {
     public FormHelpPrateleira (FormPrateleriaActivity activity){
         campoNome=(EditText) activity.findViewById(R.id.Edt_NomePrateleira);
         campoNumero=(EditText) activity.findViewById(R.id.Edt_NumeroPrateleria);
-        campoLocalizacao=(EditText) activity.findViewById(R.id.Edt_NumeroPrateleria);
+        campoLocalizacao=(EditText) activity.findViewById(R.id.Edt_LocalizacaoPrateleira);
         prateleira =new Prateleira();
     }
     public Prateleira pegaPrateleria(){

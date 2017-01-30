@@ -14,15 +14,14 @@ import com.example.marquesdesouza.appcomprafacil.model.Produto;
 
 public class FormPrateleriaActivity extends AppCompatActivity {
     private FormHelpPrateleira helper;
-    private Prateleira prateleira;
-    @Override
+       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_prateleria);
 
         helper=new FormHelpPrateleira(this);
         Intent pegaIntent= getIntent();
-         prateleira=(Prateleira) pegaIntent.getSerializableExtra("prateleria");
+        Prateleira prateleira=(Prateleira) pegaIntent.getSerializableExtra("prateleria");
         if(prateleira!=null){
             helper.preencherFormulario(prateleira);
         }
@@ -41,16 +40,9 @@ public class FormPrateleriaActivity extends AppCompatActivity {
             case R.id.menu_formulario_ok_prateleria:
                 Prateleira prateleira = helper.pegaPrateleria();
                 PrateleiraDAO dao = new PrateleiraDAO(this);
-
-                if(prateleira.getNumero() != null){
-                    dao.altera(prateleira);
-                    Toast.makeText(FormPrateleriaActivity.this, "Prateleira "+prateleira.getNumero()+" alterada!", Toast.LENGTH_SHORT).show();
-                }
-                else {
                     dao.insere(prateleira);
                     Toast.makeText(FormPrateleriaActivity.this, "Prateleira "+prateleira.getNumero()+" adicionada!", Toast.LENGTH_SHORT).show();
-                }
-                dao.close();
+                                dao.close();
 
                 finish();
                 break;

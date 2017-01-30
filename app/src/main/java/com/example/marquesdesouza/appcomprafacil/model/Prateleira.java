@@ -34,6 +34,6 @@ public class Prateleira implements Serializable{
     public void setLocal(String local) {
         this.local = local;
     }
-    // codigo de serieble do frequencia rever se vai ser ultio @Override
-    // public String toString(){return getMatricula()+"-"+getNome();}
+     @Override
+     public String toString(){return getNumero()+"-"+getNome();}
 }
